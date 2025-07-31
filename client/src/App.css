@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+header {
+    display: flex;
+    position: relative;
+    background-color: #f8f8f8;;
+    padding: 20px;
+    box-shadow: 0 14px 25px rgba(0, 0, 0, .16);
+}
+ul {
+    list-style: none;
+}
+ul a{
+    
+    color: #222;
+    text-decoration: none;
+    
+}
+
+
+form{
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  display: grid;
+  gap: 10px;
+  
+}
+
+@media only screen and (min-width: 960px){
+  form{
+    width:500px;
+    grid-template-columns: 5fr 1fr 1fr;
+    margin: 1rem auto;
+  }
+}
+
+
+form input {
+  padding: 14px;
+  border: 3px, solid, rgb(225,225,225);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size:20px;
+  
+}
+
+form button{
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 16px;
+  cursor: pointer;
+  
+}
+
+form button[type='button'] {
+  background-color: rgb(0,0,0,0.8);
+  color:white;
+}
+
+.image-grid {
+  margin: 0 0.5rem 0 0.5rem;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  background:  rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px); /* Difumina el fondo detrás */
+  color: #ddd;
+}
+.image-item:hover {
+  transform: scale(1.02);
+}
+.image-item img {
+  width: 100%;
+  height: 100%;
+  /*display: block;*/
+  object-fit: cover;
+}
+
+.image-name {
+  font-size: 0.9rem;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footer button {
+  font-size: 36px;
+  border-radius: 10px;
+  border: none;
+  padding: 18px;
+  margin: 3rem 0 3rem 0;
+  cursor: pointer;
+}
+
+.titillium-web-semibold {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .titillium-web-extralight {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  .titillium-web-light {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .left {
+    display: flex;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 30px;
+}
+
+.margin-remove {
+    margin-left: -50px;
+}
+
+.margin-right {
+    margin-right: 10px !important;
+}
