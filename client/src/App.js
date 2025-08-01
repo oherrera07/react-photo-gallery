@@ -8,6 +8,7 @@ const App = () => {
   const [imageList, setImageList] = useState([]);
   const [nextCursor, setNextCursor] = useState(null);
   const [searchValue, setSearchValue] = useState("");
+  const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -74,11 +75,32 @@ const App = () => {
       <div className='image-grid'>
         {imageList.map((image) => (
           <div key={image.asset_id} className="image-item">
-            <img src={image.url} alt={image.public_id}  />
+            <img src={image.url} alt={image.public_id} onClick={() => setImagenSeleccionada(image.url)} />
             <p className='titillium-web-light'>{image.display_name}</p>
           </div>
         ))}
       </div>
+
+      {imagenSeleccionada && (
+        <div className='main-container'>
+          {/* Contenedor de imagen + botón cerrar */}
+          <div className='image-container'>
+            {/* Botón cerrar */}
+            <div className='close-button'
+              onClick={() => setImagenSeleccionada(null)}
+            >
+              ×
+            </div>
+
+            {/* Imagen grande */}
+            <img
+              src={imagenSeleccionada}
+              alt="Vista grande"
+              style={{ maxWidth: '90vw', maxHeight: '90vh', borderRadius: '8px' }}
+            />
+          </div>
+        </div>
+      )}
 
       <div className='footer'>
         {nextCursor && <button onClick={handleLoadMoreButtonClick}>Load More</button>}
